@@ -148,10 +148,29 @@
       if (!buf.length) { // linha que começa um bloco mas não casou acima: trata como texto
         buf.push(lines[i]); i++;
       }
-      const html = inline(buf.join('\n'), refs).replace(/ {2,}\n/g, '<br>').replace(/\\\n/g, '<br>');
+      // cada Enter dentro do parágrafo é uma quebra de linha (o arquivo gravado leva a quebra explícita, ver hardBreaks)
+      const html = inline(buf.join('\n'), refs).replace(/( {2,}|\\)?\n/g, '<br>');
       out.push(`<p>${html}</p>`);
     }
     return out.join('\n');
+  }
+
+  /* ---------- quebras de linha explícitas ----------
+     No Markdown padrão um Enter sozinho não quebra a linha (as linhas se juntam no
+     mesmo parágrafo). Ao gravar, as linhas seguidas de um parágrafo ganham dois
+     espaços no fim, para o site mostrar a quebra igual à prévia. */
+  function hardBreaks(md) {
+    const lines = String(md).replace(/\r\n?/g, '\n').split('\n');
+    const isText = (l) => l !== undefined && !RE.blank.test(l) && !isBlockStart(l) && !/^[ \t]{0,3}\[[^\]\n]+\]:/.test(l);
+    const isQuote = (l) => l !== undefined && RE.quote.test(l) && /\S/.test(l.replace(/^\s?>/, ''));
+    let fence = false;
+    return lines.map((l, i) => {
+      if (/^```/.test(l)) { fence = !fence; return l; }
+      const next = lines[i + 1];
+      const joined = (isText(l) && isText(next)) || (isQuote(l) && isQuote(next));
+      if (fence || !joined || /( {2,}|\\)$/.test(l)) return l;
+      return l.replace(/\s+$/, '') + '  ';
+    }).join('\n');
   }
 
   /* ---------- texto puro (para contagem de palavras / prévia de SEO) ---------- */
@@ -233,7 +252,7 @@
       lines.push(`${k}: ${yamlScalar(v)}`);
     }
     lines.push('---', '');
-    return lines.join('\n') + String(body || '').replace(/\r\n?/g, '\n').trim() + '\n';
+    return lines.join('\n') + hardBreaks(String(body || '').trim()) + '\n';
   }
 
   window.MD = { render, inline, plain, esc, parseFrontMatter, stringifyFrontMatter, extractRefs };

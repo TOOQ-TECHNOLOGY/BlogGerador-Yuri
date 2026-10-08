@@ -83,8 +83,22 @@
   const icon = (n, cls = '') =>
     `<svg class="icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]}</svg>`;
 
-  // símbolo da Tooq (dois elos) e marca
-  const SYMBOL = '<svg viewBox="0 0 64 36" fill="none" stroke="currentColor" stroke-width="6" aria-hidden="true"><rect x="3" y="3" width="34" height="30" rx="15"/><rect x="27" y="3" width="34" height="30" rx="15"/></svg>';
+  // ícones sólidos (preenchidos, 24x24) da navegação do CMS
+  const SOLID = {
+    file: '<path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>',
+    image: '<path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>',
+    search: '<path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>',
+    editNote: '<path d="M3 10h11v2H3v-2zm0-4h11v2H3V6zm0 8h7v2H3v-2zm15.01-1.13.71-.71a1 1 0 0 1 1.41 0l.71.71a1 1 0 0 1 0 1.41l-.71.71-2.12-2.12zm-.71.71L12 18.88V21h2.12l5.3-5.3-2.12-2.12z"/>',
+    caret: '<path d="M7 10l5 5 5-5z"/>',
+    list: '<path d="M3 4h18v2.4H3zm0 4.53h18v2.4H3zm0 4.54h18v2.4H3zm0 4.53h18V20H3z"/>',
+    grid: '<rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/>',
+    user: '<path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-3.34 0-8 1.67-8 5v1.5c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V19c0-3.33-4.66-5-8-5z"/>',
+  };
+  const solid = (n, cls = '') =>
+    `<svg class="icon ${cls}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${SOLID[n]}</svg>`;
+
+  // símbolo da Tooq (dois elos, arquivo oficial TOOQ_Symbol) e marca
+  const SYMBOL = '<svg viewBox="0 0 709.97 287.7" fill="currentColor" aria-hidden="true"><path d="M709.76,143.85v-17.11C709.76,56.53,653.23,0,583.02,0h-129.59c-31.99,0-61.12,11.76-83.37,31.18,13.31,15.76,23.38,34.31,29.23,54.65,13.27-16.66,33.7-27.34,56.75-27.34h124.38c40.18,0,72.53,32.35,72.53,72.53v25.66c0,40.18-32.35,72.53-72.53,72.53h-124.37c-2.61.02-5.21-.2-7.81-.43-2.1-.22-4.16-.54-6.2-.94-.44-.09-.87-.18-1.31-.27-1.98-.42-3.93-.91-5.85-1.49-.44-.13-.87-.29-1.31-.43-1.7-.55-3.37-1.16-5.01-1.83-.5-.21-1-.41-1.5-.63-1.54-.67-3.05-1.41-4.53-2.18-.59-.31-1.19-.61-1.77-.93-1.41-.78-2.77-1.63-4.11-2.5-6.59-4.27-12.45-9.56-17.33-15.69-9.87-12.39-15.8-28.08-15.8-45.22v-12.83h0v-17.12c0-38.16-17.15-72.25-43.66-95.45.03-.04.06-.08.09-.11C317.66,11.76,288.54,0,256.55,0H126.74C56.52,0,0,56.52,0,126.74l.22,17.12h0v17.11c0,70.21,56.52,126.74,126.74,126.74h129.59c31.99,0,61.12-11.76,83.37-31.18-13.31-15.76-23.38-34.31-29.23-54.65-13.27,16.66-33.7,27.34-56.75,27.34h-124.38c-40.18,0-72.53-32.35-72.53-72.53v-25.66c0-40.18,32.35-72.53,72.53-72.53h124.37c2.61-.02,5.21.2,7.81.43,2.1.22,4.16.54,6.2.94.44.09.87.18,1.31.27,1.98.42,3.93.91,5.85,1.49.44.13.87.29,1.31.43,1.7.55,3.37,1.16,5.01,1.83.5.21,1,.41,1.5.63,1.54.67,3.05,1.41,4.53,2.18.59.31,1.19.61,1.77.93,1.41.78,2.77,1.63,4.11,2.5,6.59,4.27,12.45,9.56,17.33,15.69,9.87,12.39,15.8,28.08,15.8,45.22v12.83h0v17.12c0,38.16,17.15,72.25,43.66,95.45-.03.04-.06.08-.09.11,22.26,19.42,51.38,31.18,83.37,31.18h129.81c70.21,0,126.74-58.62,126.74-126.74"/></svg>';
   const WORDMARK = '<svg viewBox="0 0 150 40" aria-label="tooq"><text x="0" y="31" font-family="Inter, system-ui, sans-serif" font-size="38" font-weight="700" letter-spacing="-2.5" fill="currentColor">tooq</text></svg>';
   const STACKMARK = '<svg viewBox="0 0 40 40" aria-hidden="true"><text x="2" y="18" font-family="Inter, system-ui, sans-serif" font-size="19" font-weight="700" letter-spacing="-1.5" fill="currentColor">to</text><text x="2" y="37" font-family="Inter, system-ui, sans-serif" font-size="19" font-weight="700" letter-spacing="-1.5" fill="currentColor">oq</text></svg>';
 
@@ -126,7 +140,7 @@
     pendingHandle: null,          // handle salvo que ainda precisa de permissão (clique)
     posts: [],
     loading: false,
-    cms: { query: '', sort: 'newest', product: '', featured: false, layout: 'list' },
+    cms: { query: '', sort: 'newest', product: '', layout: 'list' },
     blog: { query: '', sort: 'newest', product: '' },
     theme: 'light',
   };
@@ -151,7 +165,6 @@
       date: String(data.date || ''),
       author: String(data.author || ''),
       product: String(data.product || ''),
-      featured: data.featured === true || data.featured === 'true',
       cover: String(data.cover || data.image || ''),
       coverAlt: String(data.coverAlt || data.cover_alt || ''),
       seoTitle: String(data.seoTitle || data.seo_title || ''),
@@ -211,6 +224,13 @@
     else if (mode === 'title') out.sort((a, b) => a.title.localeCompare(b.title, 'en'));
     else out.sort((a, b) => t(b) - t(a));
     return out;
+  };
+  // o último artigo é sempre o de data mais recente: ganha a etiqueta "Latest post" e o destaque
+  // no topo do blog. No editor, o rascunho entra na conta no lugar da versão salva dele.
+  const latestOf = (list) => sortPosts(list, 'newest')[0] || null;
+  const isLatest = (p) => {
+    const list = state.posts.includes(p) ? state.posts : [p, ...state.posts.filter((x) => x.slug !== p.slug)];
+    return latestOf(list) === p;
   };
   const matches = (p, q) => {
     if (!q) return true;
@@ -305,7 +325,7 @@
         <summary class="account" title="${h(s.label)}">
           <span class="status-dot ${dot ? 'status-dot--' + dot : ''}"></span>
           <span class="account__name">tooqtechnology.com</span>
-          <span class="avatar avatar--user">${icon('user')}</span>
+          <span class="avatar avatar--user">${solid('user')}</span>
         </summary>
         <div class="menu__list">
           <div class="menu__head">Pasta content-blog</div>
@@ -327,12 +347,12 @@
       <header class="topbar">
         <a class="topbar__logo" href="#/" aria-label="Início">${SYMBOL}</a>
         <nav class="topbar__nav">
-          <a class="navbtn ${active === 'conteudos' ? 'navbtn--active' : ''}" href="#/">${icon('file')}<span>Conteúdos</span></a>
-          <a class="navbtn ${active === 'blog' ? 'navbtn--active' : ''}" href="#/blog">${icon('image')}<span>Blog</span></a>
+          <a class="navbtn ${active === 'conteudos' ? 'navbtn--active' : ''}" href="#/">${solid('file')}<span>Conteúdos</span></a>
+          <a class="navbtn ${active === 'blog' ? 'navbtn--active' : ''}" href="#/blog">${solid('image')}<span>Blog</span></a>
         </nav>
         <div class="spacer"></div>
         <details class="menu">
-          <summary class="btn btn--primary btn--quick"><span>Adição rápida</span>${icon('chevron')}</summary>
+          <summary class="btn btn--primary btn--quick"><span>Adição rápida</span>${solid('caret')}</summary>
           <div class="menu__list"><a class="menu__item" href="#/novo">${icon('pen')} Artigo</a></div>
         </details>
         ${storeMenuHtml()}
@@ -372,9 +392,8 @@
     const c = state.cms;
     let posts = state.posts.filter((p) => matches(p, c.query));
     if (c.product) posts = posts.filter((p) => p.product === c.product);
-    if (c.featured) posts = posts.filter((p) => p.featured);
     posts = sortPosts(posts, c.sort);
-    const filtered = !!(c.product || c.featured);
+    const filtered = !!c.product;
     const sortLabel = { newest: 'Mais recentes', oldest: 'Mais antigos', title: 'Título A–Z' };
     const usedProducts = PRODUCTS.filter((p) => state.posts.some((x) => x.product === p.slug));
 
@@ -383,7 +402,7 @@
         <span class="row__title">${h(p.title)}</span>
         <span class="row__date">${fmtBR(p.date)}</span>
         <span class="row__tags">
-          ${p.featured ? `<span class="pill pill--solid">Featured</span>` : ''}
+          ${isLatest(p) ? `<span class="pill pill--solid">Latest post</span>` : ''}
           ${p.product ? `<span class="pill">${h(productName(p.product))}</span>` : ''}
         </span>
       </a>`).join('');
@@ -392,7 +411,7 @@
       <a class="tile" href="#/editar/${encodeURIComponent(p.slug)}">
         <div class="tile__cover">${coverHtml(p)}</div>
         <div class="tile__title">${h(p.title)}</div>
-        <div class="tile__meta">${fmtBR(p.date)}${p.featured ? ' · <span class="pill pill--solid">Featured</span>' : ''}</div>
+        <div class="tile__meta">${fmtBR(p.date)}${isLatest(p) ? ' · <span class="pill pill--solid">Latest post</span>' : ''}</div>
       </a>`).join('');
 
     const empty = state.posts.length
@@ -403,8 +422,8 @@
       <div class="cms">
         <aside class="card cms__side">
           <h2 class="cms__side-title">Coleções</h2>
-          <label class="search">${icon('search')}<input type="search" placeholder="Pesquisar em todos" value="${h(c.query)}" data-input="cms-query" aria-label="Pesquisar"></label>
-          <a class="collection collection--active" href="#/">${icon('pen')}<span>Blog</span><span class="collection__count">${state.posts.length}</span></a>
+          <label class="search">${solid('search')}<input type="search" placeholder="Pesquisar em todos" value="${h(c.query)}" data-input="cms-query" aria-label="Pesquisar"></label>
+          <a class="collection collection--active" href="#/">${solid('editNote')}<span>Blog</span><span class="collection__count">${state.posts.length}</span></a>
         </aside>
         <main class="cms__main">
           ${storeBanner()}
@@ -417,22 +436,21 @@
           </section>
           <div class="cms__tools">
             <details class="menu">
-              <summary class="toolbtn">Ordenar por ${icon('chevron')}</summary>
+              <summary class="toolbtn">Ordenar por ${solid('caret')}</summary>
               <div class="menu__list">
                 ${Object.entries(sortLabel).map(([k, v]) => `<button type="button" class="menu__item ${c.sort === k ? 'is-active' : ''}" data-action="cms-sort" data-value="${k}">${c.sort === k ? icon('check') : '<span class="icon"></span>'} ${v}</button>`).join('')}
               </div>
             </details>
             <details class="menu">
-              <summary class="toolbtn ${filtered ? 'is-filtered' : ''}">Filtrar por ${icon('chevron')}</summary>
+              <summary class="toolbtn ${filtered ? 'is-filtered' : ''}">Filtrar por ${solid('caret')}</summary>
               <div class="menu__list">
-                <button type="button" class="menu__item ${!filtered ? 'is-active' : ''}" data-action="cms-filter" data-product="" data-featured="0">${!filtered ? icon('check') : '<span class="icon"></span>'} Todos</button>
-                <button type="button" class="menu__item ${c.featured ? 'is-active' : ''}" data-action="cms-filter" data-product="${h(c.product)}" data-featured="${c.featured ? '0' : '1'}">${icon('star')} Em destaque</button>
+                <button type="button" class="menu__item ${!filtered ? 'is-active' : ''}" data-action="cms-filter" data-product="">${!filtered ? icon('check') : '<span class="icon"></span>'} Todos</button>
                 ${usedProducts.length ? '<div class="menu__sep"></div><div class="menu__head">Produto</div>' : ''}
-                ${usedProducts.map((p) => `<button type="button" class="menu__item ${c.product === p.slug ? 'is-active' : ''}" data-action="cms-filter" data-product="${c.product === p.slug ? '' : p.slug}" data-featured="${c.featured ? '1' : '0'}">${c.product === p.slug ? icon('check') : '<span class="icon"></span>'} ${h(p.name)}</button>`).join('')}
+                ${usedProducts.map((p) => `<button type="button" class="menu__item ${c.product === p.slug ? 'is-active' : ''}" data-action="cms-filter" data-product="${c.product === p.slug ? '' : p.slug}">${c.product === p.slug ? icon('check') : '<span class="icon"></span>'} ${h(p.name)}</button>`).join('')}
               </div>
             </details>
-            <button type="button" class="iconbtn ${c.layout === 'list' ? 'is-active' : ''}" data-action="cms-layout" data-value="list" aria-label="Lista">${icon('list')}</button>
-            <button type="button" class="iconbtn ${c.layout === 'grid' ? 'is-active' : ''}" data-action="cms-layout" data-value="grid" aria-label="Grade">${icon('grid')}</button>
+            <button type="button" class="iconbtn ${c.layout === 'list' ? 'is-active' : ''}" data-action="cms-layout" data-value="list" aria-label="Lista">${solid('list')}</button>
+            <button type="button" class="iconbtn ${c.layout === 'grid' ? 'is-active' : ''}" data-action="cms-layout" data-value="grid" aria-label="Grade">${solid('grid')}</button>
           </div>
           ${posts.length ? (c.layout === 'grid' ? `<div class="tiles">${tiles}</div>` : `<div class="rows">${rows}</div>`) : empty}
         </main>
@@ -508,10 +526,8 @@
     if (b.product) list = list.filter((p) => p.product === b.product);
     list = sortPosts(list, b.sort);
     const hasFilter = !!(b.query || b.product);
-    const featured = !hasFilter && list.length
-      ? (sortPosts(list.filter((p) => p.featured), 'newest')[0] || list[0])
-      : null;
-    const rest = featured ? list.filter((p) => p !== featured) : list;
+    const latest = hasFilter ? null : latestOf(list);
+    const rest = latest ? list.filter((p) => p !== latest) : list;
     const counts = {};
     state.posts.forEach((p) => { counts[p.product] = (counts[p.product] || 0) + 1; });
     const usedProducts = PRODUCTS.filter((p) => counts[p.slug]);
@@ -550,14 +566,14 @@
               </div>
             </aside>
             <main>
-              ${featured ? `
+              ${latest ? `
                 <article class="featured">
-                  <a class="featured__cover" href="#/blog/${encodeURIComponent(featured.slug)}">${coverHtml(featured)}</a>
+                  <a class="featured__cover" href="#/blog/${encodeURIComponent(latest.slug)}">${coverHtml(latest)}</a>
                   <div>
-                    <div class="featured__tags"><span class="pill pill--solid">Featured</span>${featured.product ? `<span class="pill">${h(productName(featured.product))}</span>` : ''}</div>
-                    <h2><a href="#/blog/${encodeURIComponent(featured.slug)}">${h(featured.title)}</a></h2>
-                    <p>${h(featured.summary)}</p>
-                    <a href="#/blog/${encodeURIComponent(featured.slug)}">${bylineHtml(featured)}</a>
+                    <div class="featured__tags"><span class="pill pill--solid">Latest post</span>${latest.product ? `<span class="pill">${h(productName(latest.product))}</span>` : ''}</div>
+                    <h2><a href="#/blog/${encodeURIComponent(latest.slug)}">${h(latest.title)}</a></h2>
+                    <p>${h(latest.summary)}</p>
+                    <a href="#/blog/${encodeURIComponent(latest.slug)}">${bylineHtml(latest)}</a>
                   </div>
                 </article>` : ''}
               <div class="site-count"><span class="label">${list.length} article${list.length === 1 ? '' : 's'}</span></div>
@@ -578,7 +594,7 @@
         <div class="article-hero__in">
           ${standalone ? `<a class="back" href="#/blog">${icon('arrowLeft')} All articles</a>` : ''}
           <div class="article-hero__tags">
-            ${p.featured ? `<span class="pill pill--solid">Featured</span>` : ''}
+            ${isLatest(p) ? `<span class="pill pill--solid">Latest post</span>` : ''}
             ${p.product ? `<a class="pill" href="${productUrl(p.product)}" target="_blank" rel="noopener">${h(productName(p.product))}</a>` : ''}
           </div>
           <h1>${h(p.title) || '<span style="opacity:.35">Title</span>'}</h1>
@@ -604,7 +620,7 @@
   function newDraft() {
     return {
       name: '', slug: '', title: '', summary: '', date: toLocalInput(new Date()), author: '', product: '',
-      featured: false, cover: '', coverAlt: '', seoTitle: '', seoDescription: '', body: '', coverUrl: '', mtime: 0,
+      cover: '', coverAlt: '', seoTitle: '', seoDescription: '', body: '', coverUrl: '', mtime: 0,
       dir: '', assetMap: {},
     };
   }
@@ -718,10 +734,6 @@
             ${field('Produto',
               `<select class="select" name="product">${productOptions}</select>`,
               'O produto da Tooq de que o artigo trata. Vira o filtro do blog e um link para a página do produto.')}
-
-            ${field('Destaque (opcional)',
-              `<div class="togglebox"><label class="switch"><input type="checkbox" name="featured" ${d.featured ? 'checked' : ''}><span></span></label></div>`,
-              'Mostra o artigo em destaque no topo do blog. Se nenhum estiver marcado, o mais recente fica em destaque.')}
 
             ${field('Imagem de capa (opcional)',
               `<div id="coverBox">${coverBoxHtml()}</div>`,
@@ -886,7 +898,7 @@
   function frontMatterOf(d, slug) {
     return {
       title: d.title.trim(), slug, summary: d.summary.trim(), date: d.date, author: d.author.trim(),
-      product: d.product, featured: !!d.featured, cover: d.cover.trim(), coverAlt: d.coverAlt.trim(),
+      product: d.product, cover: d.cover.trim(), coverAlt: d.coverAlt.trim(),
       seoTitle: d.seoTitle.trim(), seoDescription: d.seoDescription.trim(),
     };
   }
@@ -915,7 +927,27 @@
     const sel = v.slice(s, e);
     let before = v.slice(0, s), after = v.slice(e), ins = '', cs = 0, ce = 0;
 
-    const wrap = (l, r, ph) => { const t = sel || ph; ins = l + t + r; cs = s + l.length; ce = cs + t.length; };
+    // os marcadores ficam colados no texto: "** palavra **" não vira negrito no Markdown,
+    // então espaços da seleção (o duplo clique pega o espaço depois da palavra) ficam de fora
+    const wrap = (l, r, ph) => {
+      const parts = (sel || ph).split('\n').map((x) => {
+        const lead = x.match(/^\s*/)[0];
+        const core = x.slice(lead.length).replace(/\s+$/, '');
+        return { lead, core, trail: x.slice(lead.length + core.length) };
+      });
+      const one = parts.length === 1 && parts[0].core ? parts[0] : null;
+      // já formatado (marcadores dentro ou em volta da seleção): remove
+      if (one && one.core.length > l.length + r.length && one.core.startsWith(l) && one.core.endsWith(r)) {
+        const t = one.core.slice(l.length, -r.length);
+        ins = one.lead + t + one.trail; cs = s + one.lead.length; ce = cs + t.length; return;
+      }
+      if (one && !one.lead && !one.trail && before.endsWith(l) && after.startsWith(r)) {
+        before = before.slice(0, -l.length); after = after.slice(r.length);
+        ins = one.core; cs = s - l.length; ce = cs + one.core.length; return;
+      }
+      ins = parts.map((x) => (x.core ? x.lead + l + x.core + r + x.trail : x.lead + x.trail)).join('\n');
+      if (one) { cs = s + one.lead.length + l.length; ce = cs + one.core.length; } else { cs = s; ce = s + ins.length; }
+    };
     const prefixLines = (pfx, numbered) => {
       // expande para linhas inteiras
       const ls = before.lastIndexOf('\n') + 1;
@@ -1084,7 +1116,7 @@
       case 'pick-files': document.getElementById('dirInput').click(); break;
       case 'reload': await loadPosts(); render(); toast('Artigos recarregados.'); break;
       case 'cms-sort': state.cms.sort = el.dataset.value; render(); break;
-      case 'cms-filter': state.cms.product = el.dataset.product || ''; state.cms.featured = el.dataset.featured === '1'; render(); break;
+      case 'cms-filter': state.cms.product = el.dataset.product || ''; render(); break;
       case 'cms-layout': state.cms.layout = el.dataset.value; try { localStorage.setItem('tooq.layout', state.cms.layout); } catch {} render(); break;
       case 'blog-product': state.blog.product = el.dataset.value || ''; render(); break;
       case 'theme': state.theme = el.dataset.value; try { localStorage.setItem('tooq.theme', state.theme); } catch {} document.querySelectorAll('.site').forEach((s) => s.dataset.theme = state.theme); document.querySelectorAll('.theme-toggle button').forEach((b) => b.classList.toggle('is-on', b.dataset.value === state.theme)); break;
@@ -1126,8 +1158,7 @@
     if (di === 'blog-query') { state.blog.query = t.value; refreshBlogOnly(); return; }
     if (!editor || !t.name) return;
     const d = editor.draft;
-    if (t.name === 'featured') d.featured = t.checked;
-    else d[t.name] = t.value;
+    d[t.name] = t.value;
     const counter = document.querySelector(`[data-counter="${t.name}"]`);
     if (counter) { const max = t.name === 'seoTitle' ? 60 : 155; counter.textContent = `${t.value.length}/${max}`; counter.classList.toggle('is-over', t.value.length > max); }
     if (t.name === 'title') { const f = t.closest('.field'); if (t.value.trim()) f.classList.remove('field--invalid'); document.title = `${t.value || 'Novo artigo'} · Tooq Blog`; }

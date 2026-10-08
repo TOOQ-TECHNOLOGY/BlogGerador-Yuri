@@ -1,15 +1,14 @@
 ---
-title: Lorem Ipsum 3
+title: Tooq cloud e seu cu
 slug: lorem-ipsum-3
 summary: "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\" \"Não há quem goste de dor, que a procure e a queira ter, simplesmente porque é dor...\""
-date: 2026-10-06T09:00
+date: 2026-10-08T14:15
 author: Patrick Jane
 product: connectivity
-featured: true
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-## Why latency still matters
+**## Why latency still matters**
 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
