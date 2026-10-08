@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tooq · Gerador de conteúdo do blog</title>
+  <meta name="description" content="Editor local de artigos do blog da Tooq. Gera arquivos .md na pasta content-blog.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 36'%3E%3Crect x='3' y='3' width='34' height='30' rx='15' fill='none' stroke='%231a40f4' stroke-width='6'/%3E%3Crect x='27' y='3' width='34' height='30' rx='15' fill='none' stroke='%231a40f4' stroke-width='6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app" class="app"></div>
+
+  <!-- inputs persistentes (fora do #app para sobreviver às re-renderizações) -->
+  <input type="file" id="dirInput" webkitdirectory multiple hidden>
+  <input type="file" id="coverInput" accept="image/*" hidden>
+  <input type="file" id="bodyImageInput" accept="image/*" hidden>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/markdown.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
